@@ -6,4 +6,14 @@ routes.get('/', (request, response) =>
   response.json({ message: 'Hello world' }),
 );
 
+routes.get('/users', (request, response) => {
+  const { name, email } = request.body;
+
+  const user = {
+    name,
+    email,
+  };
+  return response.json(user);
+});
+
 export default routes;
