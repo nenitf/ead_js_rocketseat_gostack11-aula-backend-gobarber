@@ -1,19 +1,10 @@
 import { Router } from 'express';
+import appointmentsRouter from './appointments.routes';
 
 const routes = Router();
 
-routes.get('/', (request, response) =>
-  response.json({ message: 'Hello world' }),
-);
-
-routes.get('/users', (request, response) => {
-  const { name, email } = request.body;
-
-  const user = {
-    name,
-    email,
-  };
-  return response.json(user);
-});
+// repassa qualquer verbo http (get, post, put etc) da rota appointments
+// para a variável/arquivo appointmentsRouter
+routes.use('/appointments', appointmentsRouter);
 
 export default routes;

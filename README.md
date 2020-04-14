@@ -4,5 +4,5 @@
 ## setup
 ```sh
 yarn
-yarn tsc
+yarn dev:server
 ```
