@@ -1,5 +1,5 @@
-# dicas:
-#   - cursor no método http e <c-j>
+# com o vim, <c-j> ou o g:vrc_trigger no método http
+# https://github.com/diepm/vim-rest-console.git
 
 # global definitions
 // default host
