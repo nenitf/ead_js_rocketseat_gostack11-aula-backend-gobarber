@@ -7,6 +7,9 @@ docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d p
 ```
 ## setup
 ```sh
-docker start <id-container> # docker ps -a
+docker start gostack_postgres
+# caso não de para iniciar pelo nome do container
+#docker start <id-container> # docker ps -a
+
 yarn dev:server
 ```
