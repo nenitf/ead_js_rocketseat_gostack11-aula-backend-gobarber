@@ -25,3 +25,9 @@ POST /users
   "email": "diego@rocketseat.com.br",
   "password": "123456"
 }
+--
+POST /sessions
+{
+  "email": "diego@rocketseat.com.br",
+  "password": "123456"
+}
