@@ -4,6 +4,9 @@ export default class CreateAppointments1587090856216
   implements MigrationInterface {
   // objetivo da migration
   public async up(queryRunner: QueryRunner): Promise<void> {
+    // Adicionando a query para evitar o erro
+    await queryRunner.query(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`);
+
     await queryRunner.createTable(
       new Table({
         name: 'appointments',
@@ -13,6 +16,7 @@ export default class CreateAppointments1587090856216
             type: 'varchar',
             isPrimary: true,
             generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
           },
           {
             name: 'provider',
