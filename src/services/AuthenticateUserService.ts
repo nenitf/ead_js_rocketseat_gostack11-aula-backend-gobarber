@@ -1,6 +1,7 @@
 import { getRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
+import authConfig from '../config/auth';
 
 import User from '../models/User';
 
@@ -37,11 +38,12 @@ class AuthenticateUserService {
     }
 
     /* usuário autenticado */
+    const { secret, expiresIn } = authConfig.jwt;
 
     // http://www.md5.cz/
-    const token = sign({}, 'af7d58549a5a94a7cd3c03c5726df8ff', {
+    const token = sign({}, secret, {
       subject: user.id,
-      expiresIn: '1d',
+      expiresIn,
     });
 
     return { user, token };
