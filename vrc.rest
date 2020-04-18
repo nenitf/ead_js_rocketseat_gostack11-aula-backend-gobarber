@@ -40,3 +40,10 @@ POST /users
   "email": "diego@rocketseat.com.br",
   "password": "123456"
 }
+--
+//-F avatar=@exemplo-avatar.jpg
+// on windows
+-F avatar=@"C:\Users\felip\Pictures\Camera Roll\WIN_20200404_12_05_32_Pro.jpg"
+Content-Type: multipart/form-data
+Authorization: Bearer :token
+PATCH /users/avatar
