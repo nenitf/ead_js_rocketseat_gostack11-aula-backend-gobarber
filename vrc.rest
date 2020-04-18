@@ -13,9 +13,15 @@ http://localhost:3333
 --
 POST /appointments
 {
-  "provider": "Felipe",
-  "date": "2020-05-07T20:34:03"
+  "provider_id": "41677837-bd44-4720-93b1-a8223351bef2",
+  "date": "2020-06-07T20:34:03"
 }
 --
 GET /appointments
-
+--
+POST /users
+{
+  "name": "Diego Fernander",
+  "email": "diego@rocketseat.com.br",
+  "password": "123456"
+}
