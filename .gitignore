@@ -1,6 +1,8 @@
 tmp/*
 !tmp/.gitkeep
 
+.vrc*
+
 # pandoc
 README.md.pdf
 README.pdf

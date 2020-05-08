@@ -8,11 +8,10 @@ http://localhost:3333
 // argumentos curl default
 -s # silencioso
 #-i # header com syntax dinamica
-
-// Variables
 // para testar rotas que precise estar logado (com token)
-// o token vence em 25 de julho
-token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODcyNDI4ODAsImV4cCI6MTU4NzMyOTI4MCwic3ViIjoiYTk1ZDMzYTctZDdhZC00MWM4LWFlYjQtMGNhMTJkMjY2ZGMxIn0.r_ya4pKbGzPnIC1nS0TRwSdMWqiYZ28oJ8GSGDt_7LY
+// -H .vrc-token
+// exemplo do arquivo:
+// Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODg5MDU2NzksImV4cCI6MTU5NzM3Mjg3OSwic3ViIjoiYTk1ZDMzYTctZDdhZC00MWM4LWFlYjQtMGNhMTJkMjY2ZGMxIn0.8YdLVftEhzjx95b3Uqu2h4L6wg1o2wz3xbjE-GdJtbk
 
 // Default headers.
 --
@@ -24,7 +23,7 @@ POST /sessions
   "password": "123456"
 }
 --
-Authorization: Bearer :token
+-H @.vrc-token
 GET /appointments
 --
 POST /appointments
@@ -42,7 +41,7 @@ POST /users
 --
 //-F avatar=@exemplo-avatar.jpg
 // on windows
--F avatar=@"C:\Users\felip\Pictures\Camera Roll\WIN_20200404_12_05_32_Pro.jpg"
+-F avatar=@"C:\Users\felip\Pictures\Camera Roll\ead.png"
 Content-Type: multipart/form-data
-Authorization: Bearer :token
+-H @.vrc-token
 PATCH /users/avatar
