@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 
 import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
 import 'express-async-errors';
 import routes from './routes';
 import uploadConfig from './config/upload';
@@ -9,6 +10,16 @@ import AppError from './errors/AppError';
 import './database';
 
 const app = express();
+
+// libera para qualquer site o uso da api
+app.use(cors());
+
+// o correto seria:
+// app.use(
+//   cors({
+//     origin: 'http//dominio-confiavel.com',
+//   }),
+// );
 
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.directory));
