@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { getCustomRepository } from 'typeorm';
 import { parseISO } from 'date-fns';
 
 import AppointmentsRepository from '@modules/appointments/infra/typeorm/repositories/AppointmentsRepository';
@@ -8,7 +7,6 @@ import CreateAppointmentService from '@modules/appointments/services/CreateAppoi
 import ensureAuthenticated from '@modules/users/infra/http/middlewares/ensureAuthenticated';
 
 const appointmentsRouter = Router();
-const appointmentsRepository = new AppointmentsRepository();
 
 appointmentsRouter.use(ensureAuthenticated);
 
@@ -23,6 +21,7 @@ appointmentsRouter.post('/', async (request, response) => {
 
   const parsedDate = parseISO(date); // Converte em um tipo Date do js
 
+  const appointmentsRepository = new AppointmentsRepository();
   const createAppointment = new CreateAppointmentService(
     appointmentsRepository,
   );
