@@ -1,6 +1,7 @@
 tmp/**/*.png
 tmp/**/*.jpg
 tmp/**/*.jpeg
+coverage
 
 .vrc*
 
