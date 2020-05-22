@@ -1,5 +1,6 @@
-tmp/*
-!tmp/.gitkeep
+tmp/**/*.png
+tmp/**/*.jpg
+tmp/**/*.jpeg
 
 .vrc*
 
