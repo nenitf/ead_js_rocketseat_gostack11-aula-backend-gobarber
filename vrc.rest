@@ -9,7 +9,7 @@ http://localhost:3333
 -s # silencioso
 #-i # header com syntax dinamica
 // para testar rotas que precise estar logado (com token)
-// -H .vrc-token
+// -H @.vrc-token
 // exemplo do arquivo:
 // Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODg5MDU2NzksImV4cCI6MTU5NzM3Mjg3OSwic3ViIjoiYTk1ZDMzYTctZDdhZC00MWM4LWFlYjQtMGNhMTJkMjY2ZGMxIn0.8YdLVftEhzjx95b3Uqu2h4L6wg1o2wz3xbjE-GdJtbk
 
@@ -20,7 +20,7 @@ http://localhost:3333
 POST /sessions
 {
   "email": "diego@rocketseat.com.br",
-  "password": "123456"
+  "password": "123123"
 }
 --
 -H @.vrc-token
@@ -45,3 +45,15 @@ POST /users
 Content-Type: multipart/form-data
 -H @.vrc-token
 PATCH /users/avatar
+--
+POST /password/forgot
+{
+  "email": "diego@rocketseat.com.br"
+}
+--
+-d @.vrc-password-reset
+POST /password/reset
+//{
+//  "password": "123123",
+//  "token": "862fbcb1-a4c8-4007-b21a-985e8ea756f1"
+//}
