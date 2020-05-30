@@ -57,3 +57,22 @@ POST /password/reset
 //  "password": "123123",
 //  "token": "862fbcb1-a4c8-4007-b21a-985e8ea756f1"
 //}
+--
+-H @.vrc-token
+GET /profile
+--
+-H @.vrc-token
+PUT /profile
+{
+  "name": "Diego 2",
+  "email": "diego.schell.f@gmail.com"
+}
+--
+-H @.vrc-token
+PUT /profile
+{
+  "name": "Diego 2",
+  "email": "diego.schell.f@gmail.com",
+  "old_password": "123456",
+  "password": "654321"
+}
