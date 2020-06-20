@@ -21,3 +21,20 @@ docker start gostack_postgres
 # iniciar servidor em modo de desenvolvimento
 yarn dev:server
 ```
+
+## testes
+
+```sh
+# executa todos testes
+yarn test
+
+# executa todos testes de um diretório
+yarn test src/path/to/specs
+# path windows não funciona
+#yarn test .\src\path\to\specs
+
+# executa um teste (exemplo.spec.ts)
+yarn test src/path/to/exemplo
+# path windows não funciona
+#yarn test \.src\path\to\exemplo
+```
