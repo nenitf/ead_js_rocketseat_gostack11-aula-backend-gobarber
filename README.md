@@ -24,6 +24,8 @@ yarn dev:server
 
 ## testes
 
+- Pelo terminal:
+
 ```sh
 # executa todos testes
 yarn test
@@ -37,4 +39,11 @@ yarn test src/path/to/specs
 yarn test src/path/to/exemplo
 # path windows não funciona
 #yarn test \.src\path\to\exemplo
+```
+
+- Pelo vim:
+
+```vim
+" dentro do arquivo.spec.ts
+:!yarn test %
 ```
