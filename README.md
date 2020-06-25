@@ -50,3 +50,28 @@ yarn test src/path/to/exemplo
 " dentro do arquivo.spec.ts
 :!yarn test %
 ```
+
+## Padrão de commit
+
+- A uniformização dos commits é feita através de uma função criada no vim:
+
+```vim
+" script para os meus commits padrões de aula
+fun! NN_GitAula()
+    let log = system("git log --pretty=format:\%s")
+    vnew
+    put=log
+    normal! gg
+    if search('^:tv: add aula')>0
+        normal! 3W
+        let s:numero_aula = expand('<cword>')+1
+        echom system("git add -A && git commit -m \":tv: add aula ".s:numero_aula."\"")
+    else
+        echom system("git add -A && git commit -m \":tv: add aula 1\"")
+    endif
+    bdelete!
+endfun
+
+" executar com:
+" :call NN_GitAula()
+```
