@@ -30,6 +30,9 @@ yarn dev:server
 # executa todos testes
 yarn test
 
+# executa teste recomevendo qualquer cache existente do jest
+yarn test --clearCache
+
 # executa todos testes de um diretório
 yarn test src/path/to/specs
 # path windows não funciona
