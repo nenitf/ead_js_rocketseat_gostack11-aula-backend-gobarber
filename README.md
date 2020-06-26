@@ -1,9 +1,12 @@
 # bootcamp
 - [Anotações](https://www.notion.so/nenitfeadrocketseat/GoStack-11-9aa1f5390b77432a8b150e175580af3f)
+
 ## initial setup
+
 ```sh
-# criação do container
+# criação dos containers
 docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+docker run --name mongodb -p 27017:27017 -d -t mongo
 
 # download de dependências js
 yarn
@@ -11,10 +14,13 @@ yarn
 # criação de tabelas
 yarn typeorm migration:run
 ```
+
 ## setup
+
 ```sh
-# iniciar o container previamente existente caso não esteja ativo
+# iniciar os containers previamente existente caso não esteja ativo
 docker start gostack_postgres
+docker start mongodb
 # caso não de para iniciar pelo nome do container
 #docker start <id-container> # docker ps -a
 
