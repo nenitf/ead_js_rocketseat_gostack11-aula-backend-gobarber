@@ -1,3 +1,5 @@
+ormconfig.json
+
 tmp/**/*.png
 tmp/**/*.jpg
 tmp/**/*.jpeg
@@ -46,6 +48,7 @@ yarn.lock
 /tests/e2e/reports/
 selenium-debug.log
 # local env files
+.env
 .env.local
 .env.*.local
 # Log files
