@@ -7,6 +7,7 @@
 # criação dos containers
 docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
 docker run --name mongodb -p 27017:27017 -d -t mongo
+docker run --name redis -p 6379:6379 -d -t redis:alpine
 
 # download de dependências js
 yarn
@@ -21,6 +22,7 @@ yarn typeorm migration:run
 # iniciar os containers previamente existente caso não esteja ativo
 docker start gostack_postgres
 docker start mongodb
+docker start redis
 # caso não de para iniciar pelo nome do container
 #docker start <id-container> # docker ps -a
 
