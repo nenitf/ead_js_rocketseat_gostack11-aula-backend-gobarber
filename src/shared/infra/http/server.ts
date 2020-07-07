@@ -16,8 +16,6 @@ import '@shared/container';
 
 const app = express();
 
-app.use(rateLimiter);
-
 // libera para qualquer site o uso da api
 app.use(cors());
 
@@ -30,6 +28,7 @@ app.use(cors());
 
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.tmpFolder));
+app.use(rateLimiter);
 app.use(routes);
 
 // erros de valiudação do celebrate
